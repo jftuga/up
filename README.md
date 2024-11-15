@@ -1,7 +1,7 @@
 # up
 
 Troubleshoot problems with your Internet connection based on different
-[protocols](pkg/protocol.go) and well-known [public servers](pkg/servers.go).
+[protocols](internal/protocol.go) and well-known [public servers](internal/servers.go).
 
 [![GoDoc][doc-img]][doc] [![Build Status][ci-img]][ci] ![License](https://img.shields.io/github/license/jesusprubio/up)
 
@@ -11,14 +11,18 @@ Troubleshoot problems with your Internet connection based on different
 
 ## Install
 
+Binaries for all platforms are provided in the [releases](https://github.com/jesusprubio/up/releases) section.
+
+Direct install with go:
+
 ```sh
-go install -v github.com/jesusprubio/up@latest
+go install -ldflags="-s -w" -v github.com/jesusprubio/up@latest
 ```
 
 ## Use
 
-The default behavior is to verify all the [supported protocols](pkg/protocol.go)
-against a randomly selected [public server](pkg/servers.go) for each one.
+The default behavior is to verify all the [supported protocols](internal/protocol.go)
+against a randomly selected [public server](internal/servers.go) for each one.
 
 ```sh
 up
